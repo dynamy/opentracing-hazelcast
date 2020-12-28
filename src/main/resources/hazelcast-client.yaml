@@ -1,5 +1,5 @@
 hazelcast-client:
   network:
     cluster-members:
-      - [MODIFY: public ip address of hazelcast cluster here]
+      - [public ip address of hazelcast cluster here]
     smart-routing: false
