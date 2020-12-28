@@ -1,7 +1,7 @@
 package com.hazelcast.kubernetes;
 
-import io.jaegertracing.internal.JaegerTracer;
-import io.jaegertracing.internal.samplers.ConstSampler;
+//import io.jaegertracing.internal.JaegerTracer;
+//import io.jaegertracing.internal.samplers.ConstSampler;
 import io.opentracing.Tracer;
 import io.opentracing.util.GlobalTracer;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +12,11 @@ public class MyTracer {
 
 	@Bean
 	public Tracer initTracer() {
-		GlobalTracer.registerIfAbsent(createJaegerTracer("Hazelcast-Tracer"));
+		//GlobalTracer.registerIfAbsent(createJaegerTracer("Hazelcast-Tracer"));
 		return GlobalTracer.get();
 	}
 
+	/* ------ Jaeger sample -----
 	private JaegerTracer createJaegerTracer(String service) {
 		io.jaegertracing.Configuration.SamplerConfiguration samplerConfig = io.jaegertracing.Configuration.SamplerConfiguration.fromEnv()
 				.withType(ConstSampler.TYPE)
@@ -30,4 +31,5 @@ public class MyTracer {
 
 		return config.getTracer();
 	}
+	*/
 }
