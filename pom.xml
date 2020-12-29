@@ -37,7 +37,7 @@
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-all</artifactId>
-            <version>4.0</version>
+            <version>3.12.10</version>
         </dependency>
 
         <dependency>
@@ -45,11 +45,7 @@
             <artifactId>opentracing-hazelcast</artifactId>
             <version>0.1.5</version>
         </dependency>
-        <dependency>
-            <groupId>io.opentracing.contrib</groupId>
-            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
-            <version>3.2.2</version>
-        </dependency>
+
     </dependencies>
 
     <build>
