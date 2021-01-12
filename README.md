@@ -10,14 +10,17 @@ prep environment
 
 ## Hands on 2
 Compile and run app
-5. Open terminal  Terminal > New Terminal
-6. Run app `mvn spring-boot:run`
-7. Open a new terminal tab
-8. enter `curl http://localhost:8080/get?key=testkey`
+
+1. Open terminal  Terminal > New Terminal
+2. Run app `mvn spring-boot:run`
+3. Open a new terminal tab
+4. enter `curl http://localhost:8080/get?key=testkey`
+
 this will be the response `{"response":null}`
-9. enter `curl http://localhost:8080/populate`
+
+5. enter `curl http://localhost:8080/populate`
 {"response":"1000 entry inserted to the map with key: publicip-*  "}
-10. retrieve repose when provided a key, enter `curl http://localhost:8080/get?get=1.1.1.1-43`
+6. retrieve repose when provided a key, enter `curl http://localhost:8080/get?key=1.1.1.1-43`
 `{"response":1.1.1.1-43}`
 
 Once done, terminate program
