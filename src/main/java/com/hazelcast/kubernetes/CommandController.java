@@ -72,8 +72,8 @@ public class CommandController {
         return new CommandResponse(Integer.toString(size));
     }
 
-    @RequestMapping("/populate")
-    public CommandResponse populate() {
+    @RequestMapping("/pop1")
+    public CommandResponse pop1() {
         ConcurrentMap<String, String> map = getTracingHazelcast().getMap("map");
         String addr = "";
         try {
@@ -86,11 +86,32 @@ public class CommandController {
             System.out.println("Error" + e); 
         } 
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             String s = addr + "-" + Integer.toString(i);
             map.put(s, s);
         }
-        return new CommandResponse("1000 entry inserted to the map with key: " + addr + "-*  ");
+        return new CommandResponse("100 entry inserted to the map with key: " + addr + "-* , starting with 1 ");
+    }
+ 
+    @RequestMapping("/pop2")
+    public CommandResponse pop2() {
+        ConcurrentMap<String, String> map = getTracingHazelcast().getMap("map");
+        String addr = "";
+        try {
+            URL url_name = new URL("http://ifconfig.me/ip"); 
+            BufferedReader sc = new BufferedReader(new InputStreamReader(url_name.openStream())); 
+            addr = sc.readLine().trim(); 
+        }
+        catch (Exception e) 
+        { 
+            System.out.println("Error" + e); 
+        } 
+
+        for (int i = 200; i < 300; i++) {
+            String s = addr + "-" + Integer.toString(i);
+            map.put(s, s);
+        }
+        return new CommandResponse("100 entry inserted to the map with key: " + addr + "-2** , starting with 200 ");
     }
 
     @RequestMapping("/clear")
