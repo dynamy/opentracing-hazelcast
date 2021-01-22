@@ -32,7 +32,6 @@ public class CommandController {
      */
     
     public HazelcastInstance getTracingHazelcast() {
-        hazelcastInstance = HazelcastClient.newHazelcastClient();
          /* ~~ OpenTracing ~~
         if (hazelcastInstance instanceof TracingHazelcastInstance) {
             return hazelcastInstance;
